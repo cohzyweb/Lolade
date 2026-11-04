@@ -24,8 +24,7 @@
     <meta name="twitter:image" content="https://framerusercontent.com/assets/6csY4V0xropeHHRAU77yyHmVyo.png">
 	
 	
-	<script>try{if(localStorage.getItem("__framer_force_showing_editorbar_since")){const n=document.createElement("link");n.rel="modulepreload";n.href="https://framer.com/edit/init.mjs";document.head.appendChild(n)}}catch(e){}</script>
-	
+
 	<!-- Start of headStart -->
     
     <!-- End of headStart -->
@@ -374,7 +373,26 @@
     
     <!-- End of headEnd -->
 	
-<style>#__framer-badge-container,.__framer-badge{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>
+<style>
+#__framer-badge-container,.__framer-badge{display:none!important;visibility:hidden!important;pointer-events:none!important}
+#__framer-editorbar,#__framer-editorbar-container,#__framer-editorbar-label,#__framer-editorbar-button{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important}
+</style>
+<script>
+(function(){
+  var SEL="#__framer-editorbar-container,#__framer-editorbar,#__framer-editorbar-label,#__framer-editorbar-button,.framer-6jWyo";
+  try{document.querySelectorAll(SEL).forEach(function(n){n.remove()})}catch(e){}
+  try{new MutationObserver(function(muts){
+    muts.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType!==1)return;
+        try{if(n.matches&&n.matches(SEL))n.remove()}catch(e){}
+        try{n.querySelectorAll&&n.querySelectorAll(SEL).forEach(function(c){c.remove()})}catch(e){}
+      })
+    })
+  }).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
+  try{["__framer_force_showing_editorbar_since","__framer_editor_button_position"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}
+})();
+</script>
 	</head>
 <body>
 	<script async src="https://events.framer.com/script?v=2" data-fid="1da166193c1ca10935e4d7b99e5d11a5a898045f4d297bedb817184ec3b8a5e6" data-no-nt></script>
