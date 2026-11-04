@@ -375,23 +375,10 @@
 	
 <style>
 #__framer-badge-container,.__framer-badge{display:none!important;visibility:hidden!important;pointer-events:none!important}
-#__framer-editorbar,#__framer-editorbar-container,#__framer-editorbar-label,#__framer-editorbar-button{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important}
+#__framer-editorbar,#__framer-editorbar-container,#__framer-editorbar-label,#__framer-editorbar-button,#__framer-editorbar-spinner{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important}
 </style>
 <script>
-(function(){
-  var SEL="#__framer-editorbar-container,#__framer-editorbar,#__framer-editorbar-label,#__framer-editorbar-button,.framer-6jWyo";
-  try{document.querySelectorAll(SEL).forEach(function(n){n.remove()})}catch(e){}
-  try{new MutationObserver(function(muts){
-    muts.forEach(function(m){
-      m.addedNodes.forEach(function(n){
-        if(n.nodeType!==1)return;
-        try{if(n.matches&&n.matches(SEL))n.remove()}catch(e){}
-        try{n.querySelectorAll&&n.querySelectorAll(SEL).forEach(function(c){c.remove()})}catch(e){}
-      })
-    })
-  }).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
-  try{["__framer_force_showing_editorbar_since","__framer_editor_button_position"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}
-})();
+try{["__framer_force_showing_editorbar_since","__framer_editor_button_position"].forEach(function(k){localStorage.removeItem(k)})}catch(e){}
 </script>
 	</head>
 <body>
